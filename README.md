@@ -12,15 +12,15 @@ To make this to work use Fenom filters.
 ```
 {'head' | chunk}
 ```
-* Get chunk from file in core/elements/chunks/head.tpl.  
+* Get chunk from file core/elements/chunks/head.tpl.  
 ```
 {'@FILE head.tpl' | chunk}
 ```  
-* Get chunk from file in assets/tpl/main/head.tpl.  
+* Get chunk from file assets/tpl/main/head.tpl.  
 ```
 {'@FILE head.tpl' | chunk : ['tplPath'=>'assets/tpl/main/']}
 ```
-* Get chunk from file in assets/tpl/main/head.tpl.  
+* Get chunk from file assets/tpl/main/head.tpl.  
 ```
 {'@FILE main/head.tpl' | chunk : ['tplPath'=>'assets/tpl/']}
 ```   
@@ -48,15 +48,15 @@ Put it in the resource, template or chunk content. Available extensions for the 
 ```
 {'mySnippet' | snippet}
 ```
-* Get snippet from file in core/elements/snippets/mysnippet.php.  
+* Get snippet from file core/elements/snippets/mysnippet.php.  
 ```
 {'@FILE mysnippet' | snippet}
 ```  
-* Get snippet from file in assets/snippets/products/head.tpl.  
+* Get snippet from file assets/snippets/products/head.tpl.  
 ```
 {'@FILE mysnippet' | snippet : ['tplPath'=>'assets/snippets/products/']}
 ```  
-* Get snippet from file in assets/snippets/products/head.tpl.  
+* Get snippet from file assets/snippets/products/head.tpl.  
 ```
 {'@FILE products/mysnippet' | snippet : ['tplPath'=>'assets/snippets/products/']}
 ```
@@ -68,7 +68,7 @@ Put it in the resource, template or chunk content. Available extensions for the 
 ```
 {'@CODE return "This resource created on " . date("m.d.Y", strtotime($createdon));' | snippet : ['createdon'=>'[[*createdon]]']}
 ```
-* Use the filter "code" instead the prefix @CODE.  
+* Use the filter "code" instead of the prefix @CODE.  
 ```
 {'return "This resource created on " . date("m.d.Y", strtotime($createdon));' | code : ['createdon'=>'[[*createdon]]']}
 ```
