@@ -86,7 +86,8 @@ $result = $pdoTools->runSnippet('@FILE mysnippet', $arrayOfProperties); // pdoTo
 ```
  
 ### Templates
-There are several ways to work with templates. The first way, you can create as many templates as you need (as before) and put a Fenom tag in the template content.  
+There are several ways to work with templates. The first way, you can create as many templates as you need (as before) and put a Fenom tag in the template content.
+ `{'mainPage' | template}` - get the MODX template "mainPage". 
 `{'@FILE mainpage.html' | template}` - get the template from core/elements/templates/mainpage.html.  
 For each resource you need to set the corresponding template (as usual).  
 The second way is to put all logic in the snippet file "gettemplate.php". For all resources you specify only one template.
