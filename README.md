@@ -112,7 +112,7 @@ switch (true) {
         $output = $pdoTools->getChunk('@FILE news.html, array('tplPath'=>'core/elements/templates')');
         break;        
     default:
-        $output = '[[*content]]' // Empty template - only resource content.
+        $output = $resource['content']; // Empty template - only resource content.
         break;
 }
 return $output;
