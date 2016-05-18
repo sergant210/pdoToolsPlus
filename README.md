@@ -97,10 +97,10 @@ The code of the snippet can be so
 $output = '';  
 switch (true) {  
     // Define a template for a specific resource
-    case in_array($resource['id'], array(1)):  
+    case ($resource['id'] == 1):  
         $output = $pdoTools->getChunk('@FILE main.html', array('tplPath'=>'core/elements/templates'));  
         break;  
-    case in_array($resource['id'], array(7)):
+    case ($resource['id'] == 7):
         $output = $pdoTools->getChunk('@FILE contacts.html, array('tplPath'=>'core/elements/templates')');
         break;
     // Define a template for a group of resources. 
