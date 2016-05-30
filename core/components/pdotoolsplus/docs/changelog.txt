@@ -1,3 +1,7 @@
+1.0.1-pl
+==============
+- Adapted for pdoTools 2.5.0.
+
 1.0.0-pl
 ==============
 - Initial release.

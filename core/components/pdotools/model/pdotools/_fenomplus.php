@@ -16,7 +16,6 @@ class FenomPlus extends FenomX
 
         // Get chunk from file
         $this->_modifiers['chunk'] = function ($input, $options = array()) use ($modx, $pdo) {
-            if (preg_match('/^@OFF/', $input)) return '';
             $input = str_replace(array('../','./'),'',$input);
             $output = $pdo->getChunk($input, $options);
 
@@ -26,16 +25,8 @@ class FenomPlus extends FenomX
         $this->_modifiers['template'] = function ($input, $options = array()) use ($modx, $pdo) {
             $input = str_replace(array('../','./'),'',$input);
             $binding = '';
-            if (preg_match('/^@([A-Z]+)/', $input, $matches)) {
-                $binding = $matches[1];
-            }
-            switch ($binding) {
-                case '':
-                    $input = '@TEMPLATE ' . $input;
-                    break;
-                case 'OFF':
-                    return '';
-                    break;
+            if (!preg_match('/^@([A-Z]+)/', $input)) {
+                $input = '@TEMPLATE ' . $input;
             }
             if (!isset($options['tplPath'])) $options['tplPath'] = MODX_CORE_PATH . 'elements/templates/';
             $output = $pdo->getChunk($input, $options);

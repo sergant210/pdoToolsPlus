@@ -36,10 +36,6 @@ To make this to work use Fenom filters.
 ```
 {'@TEMPLATE Bootstrap.Main' | chunk}
 ```  
-* Disable the tag parsing. Another way is to put in the HTML comment tags ('<!--' and '-->').  
-```
-{'@OFF breadcrumbs' | chunk}
-```  
 
 Put it in the resource, template or chunk content. Available extensions for the chunk files are 'html' and 'tpl'.  
 
@@ -72,10 +68,6 @@ Put it in the resource, template or chunk content. Available extensions for the 
 ```
 {'return "This resource created on " . date("m.d.Y", strtotime($createdon));' | code : ['createdon'=>'[[*createdon]]']}
 ```
-* Disable the tag parsing. Another way is to put in the HTML comment tags ('<!--' and '-->').  
-```
-{'@OFF mySnippet' | snippet}
-```   
 
 Inline snippets are available only if the system settings 'pdotools_fenom_modx' and 'pdotools_fenom_php' are true.  
 These are examples for HTML contents (resource, template or chunk). In the PHP code you can use pdoTools::runSnippet(). It supports the prefix @FILE in the snippet name.  
